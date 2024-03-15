@@ -16,16 +16,10 @@ services:
     volumes:
       - "./config/aaa/:/etc/raddb/mods-config/files/"
       - "./config/clients.conf:/etc/raddb/clients.conf"
+      - "./config/sql.conf:/etc/raddb/mods-available/sql"
       - "./config/radiusd.conf:/etc/raddb/radiusd.conf"
       - "./config/proxy.conf:/etc/raddb/proxy.conf"
       - "./config/log/:/var/log/radius/"
-    environment:
-      - DB_NAME=radius
-      - DB_HOST=radiusdb
-      - DB_USER=radius
-      - DB_PASS=radpass
-      - DB_PORT=3306
-      - RADIUS_KEY=capacitaradiuskey
     depends_on:
       - radiusdb
     links:
