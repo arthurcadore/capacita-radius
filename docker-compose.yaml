@@ -17,6 +17,7 @@ services:
       - "./config/clients.conf:/etc/raddb/clients.conf"
       - "./config/radiusd.conf:/etc/raddb/radiusd.conf"
       - "./config/proxy.conf:/etc/raddb/proxy.conf"
+      - "./config/log/:/var/log/radius"
     environment:
       - DB_NAME=radius
       - DB_HOST=radiusdb
