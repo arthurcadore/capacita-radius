@@ -118,7 +118,3 @@ CREATE TABLE nas (
   PRIMARY KEY (id),
   KEY nasname (nasname)
 );
-
-LOCK TABLES `radcheck` WRITE;
-INSERT INTO `radcheck` VALUES (1,'testing','Cleartext-Password',':=','password');
-UNLOCK TABLES;
