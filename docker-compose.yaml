@@ -1,0 +1,43 @@
+# Main composition file for FREE-RADIUS Application Container.
+# Author: Arthur Cadore M. Barcella
+# Github: arthurcadore
+# Capacitação Redes - PV Intelbras
+
+version: '3.8'
+services:
+  freeradius:
+    ports:
+      - "1812:1812/udp"
+      - "1813:1813/udp"
+    volumes:
+      - "./config/authorize.conf:/etc/raddb/mods-config/files/authorize"
+      - "./config/accounting.conf:/etc/raddb/mods-config/files/accounting"
+      - "./config/dhcp.conf:/etc/raddb/mods-config/files/dhcp"
+      - "./config/preproxy.conf:/etc/raddb/mods-config/files/pre-proxy"
+      - "./config/clients.conf:/etc/raddb/clients.conf"
+      - "./config/radiusd.conf:/etc/raddb/radiusd.conf"
+      - "./config/proxy.conf:/etc/raddb/proxy.conf"
+    environment:
+      - DB_NAME=radius
+      - DB_HOST=radiusdb
+      - DB_USER=radius
+      - DB_PASS=radpass
+      - DB_PORT=3306
+      - RADIUS_KEY=testing123
+    depends_on:
+      - radiusdb
+    links:
+      - radiusdb
+    restart: always
+
+  radiusdb:
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./database/data:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=radiusrootpwd
+      - MYSQL_USER=radius
+      - MYSQL_PASSWORD=radpass
+      - MYSQL_DATABASE=radius
+    restart: always
