@@ -70,22 +70,22 @@
 # entry so that no DEFAULT entry will be used, and the user will NOT
 # get any attributes in addition to the ones listed here.
 #
-#steve  Cleartext-Password := "testing"
-#       Service-Type = Framed-User,
-#       Framed-Protocol = PPP,
-#       Framed-IP-Address = 172.16.3.33,
-#       Framed-IP-Netmask = 255.255.255.0,
-#       Framed-Routing = Broadcast-Listen,
-#       Framed-Filter-Id = "std.ppp",
-#       Framed-MTU = 1500,
-#       Framed-Compression = Van-Jacobsen-TCP-IP
+capacitaclient  Cleartext-Password := "capacitaclientpass"
+       Service-Type = Framed-User,
+       Framed-Protocol = PPP,
+       Framed-IP-Address = 172.16.3.33,
+       Framed-IP-Netmask = 255.255.255.0,
+       Framed-Routing = Broadcast-Listen,
+       Framed-Filter-Id = "std.ppp",
+       Framed-MTU = 1500,
+       Framed-Compression = Van-Jacobsen-TCP-IP
 
 #
 # The canonical testing user which is in most of the
 # examples.
 #
-#bob    Cleartext-Password := "hello"
-#       Reply-Message := "Hello, %{User-Name}"
+capacitaclient2    Cleartext-Password := "capacitaclientpass2"
+       Reply-Message := "Hello, %{User-Name}"
 #
 
 #

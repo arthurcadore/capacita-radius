@@ -96,7 +96,7 @@ The "&" character creates a process id for the command inputed, which means that
 
 Once the container is up and running, your NAS devices can authenticate using RADIUS connecting to `1812/UDP`, and check accouting into `1813/UDP` port. 
 
-### Configuring the device to authenticate into the TACACS+ Server: 
+### Configuring the device to authenticate into the RADIUS Server: 
 
 To configure the RADIUS clients, you'll need to change the AAA parameters on the NAS (Network Authentication Server) device and point it to ask the RADIUS server parameters (IP and Port). Once this parameters are configurated, the client device can ask to NAS to connect in the network. 
 
