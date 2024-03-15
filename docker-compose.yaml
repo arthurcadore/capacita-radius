@@ -11,8 +11,8 @@ services:
       dockerfile: ./docker/Dockerfile
     container_name: freeradius
     ports:
-      - "1812:1812/udp"
-      - "1813:1813/udp"
+      - "1812:1812/udp" # Authentication RADIUS Port
+      - "1813:1813/udp" # Accounting RADIUS Port
     volumes:
       - "./config/aaa/:/etc/raddb/mods-config/files/"
       - "./config/clients.conf:/etc/raddb/clients.conf"
