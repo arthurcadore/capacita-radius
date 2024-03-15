@@ -14,10 +14,7 @@ services:
       - "1812:1812/udp"
       - "1813:1813/udp"
     volumes:
-      - "./config/authorize.conf:/etc/raddb/mods-config/files/authorize"
-      - "./config/accounting.conf:/etc/raddb/mods-config/files/accounting"
-      - "./config/dhcp.conf:/etc/raddb/mods-config/files/dhcp"
-      - "./config/preproxy.conf:/etc/raddb/mods-config/files/pre-proxy"
+      - "./config/aaa/:/etc/raddb/mods-config/files/"
       - "./config/clients.conf:/etc/raddb/clients.conf"
       - "./config/radiusd.conf:/etc/raddb/radiusd.conf"
       - "./config/proxy.conf:/etc/raddb/proxy.conf"
