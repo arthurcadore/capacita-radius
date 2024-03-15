@@ -6,6 +6,10 @@
 version: '3.8'
 services:
   freeradius:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: freeradius
     ports:
       - "1812:1812/udp"
       - "1813:1813/udp"
@@ -32,6 +36,10 @@ services:
     restart: always
 
   radiusdb:
+    build:
+      context: .
+      dockerfile: ./database/Dockerfile
+    container_name: radiusdb
     ports:
       - "3306:3306"
     volumes:
