@@ -1,6 +1,9 @@
 # change the owner of the radius configuration files
 chown -R root:root /etc/raddb/*
 
+# Install net-tools for check radius ports:
+apk add --no-cache net-tools
+
 # execute the radius server
 /opt/sbin/radiusd -f &
 
