@@ -9,9 +9,5 @@ echo "################################################"
 echo "Verifing RADIUS server services..."
 ps aux
 
-echo "################################################"
-echo "Verifing RADIUS server ports..."
-netstat -a
-
 # mantain the container running
 tail -f /dev/null
