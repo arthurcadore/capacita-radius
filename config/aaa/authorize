@@ -161,6 +161,18 @@
 capacitaclient    Cleartext-Password := "capacitaclientpass"
        Reply-Message := "Hello, %{User-Name}"
 
+user20    Cleartext-Password := "user20pass"
+       Reply-Message := "Hello, %{User-Name}",
+       Tunnel-Type = VLAN,
+       Tunnel-Medium-Type = IEEE-802,
+       Tunnel-Private-Group-Id = "20"
+
+user30    Cleartext-Password := "user30pass"
+       Reply-Message := "Hello, %{User-Name}",
+       Tunnel-Type = VLAN,
+       Tunnel-Medium-Type = IEEE-802,
+       Tunnel-Private-Group-Id = "30"
+
 DEFAULT Framed-Protocol == PPP
         Framed-Protocol = PPP,
         Framed-Compression = Van-Jacobson-TCP-IP
