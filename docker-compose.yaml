@@ -20,4 +20,5 @@ services:
       - "./config/radiusd.conf:/etc/raddb/radiusd.conf"
       - "./config/proxy.conf:/etc/raddb/proxy.conf"
       - "./log/:/var/log/radius/"
+      - "./certs:/etc/freeradius/certs"
     restart: always
