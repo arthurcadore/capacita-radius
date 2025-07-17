@@ -2,4 +2,4 @@
 chown -R root:root /etc/raddb/*
 
 # execute the radius server
-/opt/sbin/radiusd -X &
+/opt/sbin/radiusd -X
