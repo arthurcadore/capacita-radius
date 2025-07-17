@@ -3,11 +3,3 @@ chown -R root:root /etc/raddb/*
 
 # execute the radius server
 /opt/sbin/radiusd -X &
-
-# verify if the radius server is running
-echo "################################################"
-echo "Verifing RADIUS server services..."
-ps aux
-
-# mantain the container running
-tail -f /dev/null
