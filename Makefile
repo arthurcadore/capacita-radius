@@ -4,13 +4,13 @@ DAYS=3650
 
 all: stop start
 
-start: generate-certs
+start:
 	docker compose up & 
 
 stop: 
 	docker compose down
 
-clean: stop docker-cleanup clean-certs
+clean: stop docker-cleanup
 
 docker-cleanup:
 	docker ps -a -q | xargs -r docker stop
