@@ -15,6 +15,7 @@ services:
       - "1813:1813/udp" # Accounting RADIUS Port
     volumes:
       - "./config/aaa/:/etc/raddb/mods-config/files/"
+      - "./config/aaa/eap:/etc/raddb/mods-enabled/eap"
       - "./config/clients.conf:/etc/raddb/clients.conf"
       - "./config/sql.conf:/etc/raddb/mods-available/sql"
       - "./config/radiusd.conf:/etc/raddb/radiusd.conf"
